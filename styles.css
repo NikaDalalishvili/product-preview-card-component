@@ -1,0 +1,245 @@
+/* 
+ * CSS RESET
+ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* 
+ *  product preview card
+ */
+
+:root {
+    --cream: #F2EAE2;
+    --pure-white: #FFFFFF;
+    --aurometal-saurus: #6C7289;
+    --deep-aquamarine: #3D8168;
+    --dark-deep-aquamarine: #1A4032;
+    --gunmetal: #1C232B
+}
+
+body {
+    background-color:  var(--cream);
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-preview-card {
+    width: 343px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--pure-white);
+
+}
+
+.product-preview-card .card-body {
+    padding: 24px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 5px;
+
+    color: var(--aurometal-saurus);
+}
+
+.title {
+    margin: 12px 0 16px;
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+
+    color: var(--gunmetal);
+}
+
+.decription {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+
+    color: var(--aurometal-saurus);
+}
+
+.price-and-add {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.new-price {
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+
+    color: var(--deep-aquamarine);
+}
+
+.old-price {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 23px;
+    text-decoration-line: line-through;
+
+    color: var(--aurometal-saurus);
+}
+
+.add-btn {
+    padding: 15px 0;
+    border-radius: 8px;
+
+    background-color: var(--deep-aquamarine);
+    border: none;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: var(--pure-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11.61px;
+}
+
+@media only screen and (min-width: 1440px) {
+    .product-preview-card {
+        width: 600px;
+        height: 450px;
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    .product-preview-card .product-img {
+        content: url("./images/image-product-desktop.jpg");
+        flex-basis: 50%;
+    }
+    .product-preview-card .card-body {
+        padding: 32px;
+    }
+
+    .title {
+        margin: 20px 0 24px;
+    }
+
+    .price-and-add {
+        margin-top: 29px;
+        gap: 30px;
+    }
+
+    .add-btn {
+        cursor: pointer;
+    }
+
+    .add-btn:hover {
+        background-color: var(--dark-deep-aquamarine);
+    }
+}
