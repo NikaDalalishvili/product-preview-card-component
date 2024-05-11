@@ -105,7 +105,7 @@ textarea:not([rows]) {
   --aurometal-saurus: #6C7289;
   --deep-aquamarine: #3D8168;
   --dark-deep-aquamarine: #1A4032;
-  --gunmetal: #1C232B
+  --gunmetal: #1C232B;
 }
 
 body {
@@ -227,6 +227,55 @@ main {
   gap: 11.61px;
 }
 
+footer {
+  padding: 15px 0;
+}
+
+.attribution {
+  margin: 30px 0;
+  padding: 10px 12px;
+  width: 100%;
+  background-color: var(--pure-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 5px;
+}
+
+.attribution p {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gunmetal);
+}
+
+.attribution p a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--deep-aquamarine); 
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .attribution p a {
+    transition: color 0.5s ease;
+  }
+
+  .attribution p a:hover {
+    color: var(--dark-deep-aquamarine);
+  }
+}
+
+@media only screen and (min-width: 648px) {
+  .attribution {
+    border-radius: 0 10px 10px 0;
+    width: max-content;
+    align-items: center;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .product-preview-card {
     width: 600px;
@@ -260,5 +309,9 @@ main {
 
   .add-btn:hover {
     background-color: var(--dark-deep-aquamarine);
+  }
+
+  .attribution p {
+    font-size: 18px;
   }
 }
